@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ book.name }}</title>
+    <style>
+        h1 {
+            text-align: center;
+            letter-spacing: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ book.name }}</h1>
+    <hr>
+    <h2>წიგნის დეტალები:</h2>
+    <p>ავტორი: {{ book.author }}</p>
+    <p>გვერდები: {{ book.pages }}</p>
+    <p>აღწერა: {{ book.desc }}</p>
+
+    <a href="/books/{{ book.pk }}/update/">✏️ რედაქტირება</a>
+    <br>
+    <hr>
+    <a href="/books/{{ book.pk }}/delete/">🗑️ წაშლა</a>
+    <br>
+    <hr>
+    <a href="/books/">← უკან სიაში</a>
+</body>
+</html>

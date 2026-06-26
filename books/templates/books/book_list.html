@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>წიგნების სია</title>
+</head>
+<body>
+    <h1>წიგნების სია</h1>
+
+    {% for book in books %}
+        <div>
+            <h3><a href="/books/{{ book.pk }}">{{ book.name }}</a></h3>
+            <p>ავტორი: {{ book.author }}</p>
+            <p>აღწერა: {{ book.desc }}</p>
+        </div>
+        <hr>
+
+        <a href="/books/add/">+ წიგნის დამატება</a>
+    {% endfor %}
+</body>
+</html>
