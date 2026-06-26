@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ author.first_name }} {{ author.last_name }}</title>
+</head>
+<body>
+    <h1>{{ author.first_name }}</h1>
+    <p>ავტორის შესახებ: {{ author.bio }}</p>
+
+    <a href="/authors/{{ author.pk }}/delete/">წაშლა</a>
+    <br>
+    <hr>
+    <a href="/authors/{{ author.pk }}/update/">რედაქტირება</a>
+    <br>
+    <hr>
+    <a href="/authors/">უკან სიაში</a>
+</body>
+</html>

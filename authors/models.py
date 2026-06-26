@@ -6,4 +6,4 @@ class Author(models.Model):
     bio = models.TextField(blank=True)
 
     def __str__(self):
-        return f"{self.firs_name} {self.last_name}"
+        return f"{self.first_name} {self.last_name}"

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ავტორების სია</title>
+</head>
+<body>
+    <h1>ავტორების სია</h1>
+
+    {% for author in authors %}
+        <div>
+            <h3><a href="/authors/{{ author.pk }}/">{{ author.first_name }} {{ author.last_name }}</a></h3>
+            <p>მის შესახებ: {{ author.bio }}</p>
+        </div>  
+        <hr>
+    {% endfor %}
+</body>
+</html>
