@@ -8,6 +8,11 @@
 <body>
     <h1>წიგნების სია</h1>
 
+    <form method="POST" action="/logout/">
+        {% csrf_token %}
+        <button type="submit">გამოსვლა</button>
+    </form>
+
     {% for book in books %}
         <div>
             <h3><a href="/books/{{ book.pk }}">{{ book.name }}</a></h3>
@@ -17,6 +22,8 @@
         <hr>
 
         <a href="/books/add/">+ წიგნის დამატება</a>
+        <br>
+        <hr>
     {% endfor %}
 </body>
 </html>
