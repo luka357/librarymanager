@@ -1,15 +1,19 @@
 from django.shortcuts import render, redirect
 from .models import Author
 from .forms import AuthorForm
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def author_list(request):
     authors = Author.objects.all()
     return render(request, 'authors/author_list.html', {'authors': authors})
 
+@login_required
 def author_detail(request, pk):
     author = Author.objects.get(pk=pk)
     return render(request, 'authors/author_detail.html', {'author': author})
 
+@login_required
 def author_add(request):
     if request.method == 'POST':
         form = AuthorForm(request.POST)
@@ -20,6 +24,7 @@ def author_add(request):
         form = AuthorForm()
     return render(request, 'authors/author_add.html', {'form': form})
 
+@login_required
 def author_update(request, pk):
     author = Author.objects.get(pk=pk)
     if request.method == 'POST':
@@ -31,6 +36,7 @@ def author_update(request, pk):
         form = AuthorForm(instance=author)
     return render(request, 'authors/author_update.html', {'form': form})
 
+@login_required
 def author_delete(request, pk):
     author = Author.objects.get(pk=pk)
     if request.method == 'POST':
