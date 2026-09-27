@@ -23,7 +23,8 @@ git clone https://github.com/luka357/librarymanager.git
 cd librarymanager
 python -m venv venv
 source venv/bin/activate        # Windows: venv\Scripts\activate
-pip install django
+pip install -r requirements.txt
+cp .env.example .env            # then set your own SECRET_KEY
 python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
